@@ -1,0 +1,10 @@
+name: S1rsRpg
+version: 1.0
+main: me.S1rFl0.S1rsRpg.Main
+description: S1rs Rpg Plugin
+
+commands:
+  S1rsRpgHelpMenu:
+    usage: /<command>
+  S1rsRecipes:
+    usage: /<command>
