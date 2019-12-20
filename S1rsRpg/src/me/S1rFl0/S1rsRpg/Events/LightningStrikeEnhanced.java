@@ -6,10 +6,12 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-public class LightningStrike {
+public class LightningStrikeEnhanced {
 	public static void trigger(Player player) {
 		Location loc = player.getEyeLocation();
 		Vector dir = loc.getDirection();
+		int a = 0;
+		for(a = 0;a < 3; a++) {	
 		double x = dir.getX()* 5;
 		double y = dir.getY()* 5;
 		double z = dir.getZ()* 5;
@@ -24,4 +26,4 @@ public class LightningStrike {
     			((LivingEntity) e).damage(2.5);
 			}
 		}}
-}}
+}}}

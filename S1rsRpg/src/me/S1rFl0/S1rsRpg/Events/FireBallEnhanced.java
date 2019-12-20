@@ -17,18 +17,18 @@ public class FireBallEnhanced {
 	public static void trigger(Player p) {
 		 new BukkitRunnable(){                          
              double t = 0;
-             double r = 16;
              float red = 0,green = 0,blue = 0;
              Location loc = p.getLocation();
              public void run(){
-                     t = t + 1;
+
                      Vector direction = loc.getDirection().normalize();
-                     int i = 0;
-                     for(; i < 30; i++) {
-                     double x = direction.getX() * t  * i / r;
-                     double y = direction.getY() * t  * i * r / 6;
-                     double z = direction.getZ() * t  * i / r;
+                     for(; t < 30; t++) {
+                     double x = direction.getX() * t;
+                     double y = direction.getY() * t + 1.5;
+                     double z = direction.getZ() * t;
                      loc.add(x,y,z);
+                     
+                     
                      PacketPlayOutWorldParticles part = new PacketPlayOutWorldParticles(EnumParticle.FLAME,true,(float) loc.getX(),(float) loc.getY(),(float) loc.getZ(),red, green, blue, (float)255, 0, 10);
                      loc.subtract(x,y,z);
                      for(Player p : Bukkit.getOnlinePlayers()) {
