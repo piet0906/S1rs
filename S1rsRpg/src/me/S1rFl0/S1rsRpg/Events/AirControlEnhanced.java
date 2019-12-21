@@ -11,4 +11,5 @@ public class AirControlEnhanced {
 		player.addPotionEffect(pot);
 		PotionEffect pot2 = new PotionEffect(PotionEffectType.JUMP, 600, 2);
 		player.addPotionEffect(pot2);
-}}
+	}
+}

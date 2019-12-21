@@ -11,6 +11,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import me.S1rFl0.S1rsRpg.CombineGui;
+import me.S1rFl0.S1rsRpg.MagicGrowthChamberGui;
 import me.S1rFl0.S1rsRpg.MagicMinerGui;
 import me.S1rFl0.S1rsRpg.SpellLibraryGui;
 
@@ -21,7 +22,6 @@ public class RightClickEvent implements Listener{
 		{
 			Player p = e.getPlayer();
 			if(getItem(p).getItemMeta().getLocalizedName() == "fireball") {FireBall.trigger(p);}
-			else if(getItem(p).getItemMeta().getLocalizedName() == "fireballe") {Temp.trigger(p);}
 			else if(getItem(p).getItemMeta().getLocalizedName() == "groundsmash") {GroundSmash.trigger(p);}
 			else if(getItem(p).getItemMeta().getLocalizedName() == "icefan") {IceFan.trigger(p);}
 			else if(getItem(p).getItemMeta().getLocalizedName() == "icefane") {IceFanEnhanced.trigger(p);}
@@ -55,6 +55,12 @@ public class RightClickEvent implements Listener{
 				{
 					Player p = e.getPlayer();
 					Inventory inv = MagicMinerGui.GUI(p);
+					p.openInventory(inv);
+				}
+				if(e.getClickedBlock().getType() == Material.CAULDRON && e.getClickedBlock().getRelative(BlockFace.UP).getType() == Material.STAINED_GLASS) 
+				{
+					Player p = e.getPlayer();
+					Inventory inv = MagicGrowthChamberGui.GUI(p);
 					p.openInventory(inv);
 				}
 			}

@@ -43,5 +43,5 @@ public class GroundSmash {
                         }
                     }
             }
-        }.runTaskTimer(plugin, 0, 3);
+        }.runTaskTimer(plugin, 0, 1);
 }}

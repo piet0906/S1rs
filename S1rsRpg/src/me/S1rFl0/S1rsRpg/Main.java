@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.S1rFl0.S1rsRpg.Events.RightClickEvent;
 import me.S1rFl0.S1rsRpg.Events.Handlers.MagicAnvilHandler;
+import me.S1rFl0.S1rsRpg.Events.Handlers.MagicGrowthChamberHandler;
 import me.S1rFl0.S1rsRpg.Events.Handlers.MagicMinerHandler;
 import me.S1rFl0.S1rsRpg.Events.Handlers.SpellLibraryHandler;
 import me.S1rFl0.S1rsRpg.Items.AirControlCustom;
@@ -20,14 +21,13 @@ public class Main extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		System.out.println("(!) S1rsRpg Starting");
-		
-		Bukkit.getPluginCommand("S1rsRpgHelpMenu").setExecutor(this);
-		
+
 		Bukkit.getPluginManager().registerEvents(new RightClickEvent(),this);
 		Bukkit.getPluginManager().registerEvents(new LeftClickEvent(), this);
 		Bukkit.getPluginManager().registerEvents(new MagicAnvilHandler(),this);
 		Bukkit.getPluginManager().registerEvents(new SpellLibraryHandler(),this);
 		Bukkit.getPluginManager().registerEvents(new MagicMinerHandler(),this);
+		Bukkit.getPluginManager().registerEvents(new MagicGrowthChamberHandler(), this);
 		Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
 		
 		FireBallCustom fireball = new FireBallCustom();
